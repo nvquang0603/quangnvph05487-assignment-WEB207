@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="col-6 offset-sm-3">
+    <div class="text-center">
+      <h3>Tạo mới danh mục</h3>
+    </div>
+    <div class="form-group">
+      <label for="">Tên danh mục</label>
+      <input type="text"
+             [formControl]="category.name"
+             class="form-control">
+    </div>
+    <div class="row">
+      <div class="col-12 text-center">
+        <img src="https://x.kinja-static.com/assets/images/logos/placeholders/default.png" *ngIf="category.image.value == ''" class="img-fluid">
+        <img [src]="category.image.value" *ngIf="category.image.value != ''" class="img-fluid">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="">Ảnh danh mục</label>
+      <input type="text"
+             [formControl]="category.image"
+             class="form-control">
+    </div>
+    <div class="text-center">
+      <button type="button"
+              (click)="saveCategory()"
+              class="btn btn-sm btn-success mx-1">Lưu</button>
+      <a routerLink="/" class="btn btn-sm btn-danger mx-1">Hủy</a>
+    </div>
+  </div>
+</div>
